@@ -1,14 +1,7 @@
 let btn = document.getElementById('btn');
-
-// btn.onclick = function (e) {
-//     console.log(e);
-// }
-
-
-// btn.addEventListener('click', function (e) {
-//     alert ('hello programmer mohaimin')
-// })
 let list = document.getElementById('list');
+let box = document.getElementById('box');
+let listItem  = document.getElementsByTagName('li');
 
 btn.addEventListener('click', function () {
     let least = list.lastElementChild.cloneNode(true)
@@ -16,12 +9,15 @@ btn.addEventListener('click', function () {
     list.appendChild(least)
 })
 
+//counting 
+let listItems = [...listItem]
+listItems.forEach((li, num) => {
+    let text = li.innerHTML
+    li.innerHTML = `${num + 1}. ${text}`
+})
 
 
 
-
-
-let box = document.getElementById('box');
 
 box.addEventListener('mousemove', function (e) {
     // document.getElementById('x-value').innerHTML = e.clientX;
